@@ -1,0 +1,11 @@
+# Django trunk
+svn+http://code.djangoproject.com/svn/django/trunk/#egg=Django
+
+# Django stable
+# django
+
+# Bootstrap theme and such
+django-bootstrapped
+
+south
+django-nose
