@@ -1,3 +1,10 @@
+import local
+
+import os
+def abs_dir(sub_path):
+    this_dir = os.path.dirname(__file__)
+    return os.path.join(this_dir, '..', sub_path)
+
 # Django settings for project project.
 
 DEBUG = True
@@ -9,16 +16,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+DATABASES = {}
+DATABASES.update(local.DATABASES)
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -81,7 +80,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'o^l)1)hver*04w-soz99_3q_#rr-=n0q#a-h3yljadt3n*_q8('
+SECRET_KEY = local.SECRET_KEY
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -96,6 +95,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -124,13 +124,16 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     # 3rd-party reusable apps
-    'south',
-    'nose',
     'bootstrapped',
+    'south',
+    'debug_toolbar',
+    'django_nose',
 
     # Project-specific apps
     'project',
 )
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
