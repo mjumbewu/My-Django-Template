@@ -5,7 +5,8 @@ svn+http://code.djangoproject.com/svn/django/trunk/#egg=Django==1.4c2
 # django
 
 # Bootstrap theme and such
-django-bootstrapped
+#django-bootstrapped
+git+git://github.com/mjumbewu/django-bootstrapped.git@bootstrap2#django-bootstrapped
 
 # Backbone front-end application framework
 git+git://github.com/mjumbewu/django-backbonejs.git#egg=django-backbonejs
