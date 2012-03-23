@@ -2,7 +2,7 @@
 *~
 
 # Local or private project settings
-*/project/settings/local.py
+*/src/settings/local.py
 
 # Virtual environment
 .env/
