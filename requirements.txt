@@ -1,5 +1,5 @@
 # Django trunk
-svn+http://code.djangoproject.com/svn/django/trunk/#egg=Django
+svn+http://code.djangoproject.com/svn/django/trunk/#egg=Django==1.4c2
 
 # Django stable
 # django
@@ -19,3 +19,4 @@ south
 # Testing
 django-nose
 django-jasmine
+django-debug-toolbar
