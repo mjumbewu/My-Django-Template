@@ -1,6 +1,9 @@
 *.py[c|o]
 *~
 
+# Local or private project settings
+*/project/settings/local.py
+
 # Virtual environment
 .env/
 
