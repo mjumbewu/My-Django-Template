@@ -17,6 +17,9 @@ django-mustachejs
 # Database admin
 south
 
+# Eventually, we always need PostgreSQL
+psycopg2
+
 # Testing
 django-nose
 django-jasmine
